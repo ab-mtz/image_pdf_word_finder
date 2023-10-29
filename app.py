@@ -4,7 +4,7 @@
 
 import matplotlib.pyplot as plt
 import keras_ocr
-import PIL
+from PIL import Image
 
 # keras-ocr will automatically download pretrained
 # weights for the detector and recognizer.
