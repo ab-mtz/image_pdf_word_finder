@@ -3,15 +3,18 @@
 
 
 import matplotlib.pyplot as plt
-
 import keras_ocr
+import PIL
 
 # keras-ocr will automatically download pretrained
 # weights for the detector and recognizer.
 pipeline = keras_ocr.pipeline.Pipeline()
 
 # Get a set of three example images
-images = ['img-2.jpg', 'img-3.jpg']
+image_paths = ['img-2.jpg', 'img-3.jpg']
+
+# Load images using Pillow and store them in a list
+images = [Image.open(image_path) for image_path in image_paths]
 # [
 #     keras_ocr.tools.read(url) for url in [
 #         'https://upload.wikimedia.org/wikipedia/commons/b/bd/Army_Reserves_Recruitment_Banner_MOD_45156284.jpg',
