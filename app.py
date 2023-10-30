@@ -14,13 +14,18 @@ from icecream import ic
 import re
 
 def main():
+#### NEXT: 
+# - check differents possible patterns and targets
+# - Incorporate the reading of a pdf file and a possible iteration trough pages
+# - Preprocess image???
+
 
     target = "damm"
     # Create an EasyOCR Reader for german
     reader = easyocr.Reader(['de'])
 
     # Load an image
-    image_path = 'sample2.jpg'
+    image_path = 'sample5.jpg'
 
     # Recognize text in the image
     results = reader.readtext(image_path)
@@ -36,14 +41,13 @@ def main():
         if target_is_present(text, target):
             # print(f'Bounding Box: {bounding_box[1]}')
             # Convert coordinates to PIL´s structure
-            x = bounding_box[0]
-            y = bounding_box[2]
-            xy = x + y
+            xy = bounding_box[0] + bounding_box[2]
             # Draw rectangle
             draw.rectangle(xy, outline="red", width=2)
+            print("================= The pattern was found in the document =================")
 
     img.show()
-    img.save('output_image2.jpg')        
+    img.save('output_image5.jpg')        
 
 def target_is_present(text, target):
     text = text.lower()
