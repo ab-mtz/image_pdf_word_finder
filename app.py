@@ -14,16 +14,15 @@ pipeline = keras_ocr.pipeline.Pipeline()
 # image_paths = ['img-2.jpg', 'img-3.jpg']
 
 # Load images using Pillow and store them in a list
-images = [] #Image.open(image_path) for image_path in image_paths]
-# [
-#     keras_ocr.tools.read(url) for url in [
-#         'https://upload.wikimedia.org/wikipedia/commons/b/bd/Army_Reserves_Recruitment_Banner_MOD_45156284.jpg',
-#         'https://upload.wikimedia.org/wikipedia/commons/e/e8/FseeG2QeLXo.jpg',
-#         'https://upload.wikimedia.org/wikipedia/commons/b/b4/EUBanana-500x112.jpg'
-#     ]
-# ]
-images.append(Image.open("img-2.jpg"))
-images.append(Image.open("img-3.jpg"))
+images = [
+    keras_ocr.tools.read(url) for url in [
+        'https://upload.wikimedia.org/wikipedia/commons/b/bd/Army_Reserves_Recruitment_Banner_MOD_45156284.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/e/e8/FseeG2QeLXo.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/b/b4/EUBanana-500x112.jpg'
+    ]
+]
+# images.append(Image.open("img-2.jpg"))
+# images.append(Image.open("img-3.jpg"))
 # Each list of predictions in prediction_groups is a list of
 # (word, box) tuples.
 prediction_groups = pipeline.recognize(images)
