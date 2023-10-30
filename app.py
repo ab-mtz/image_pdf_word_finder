@@ -32,7 +32,7 @@ def main():
     for result in results:
         text = result[1]  # Access the recognized text
         bounding_box = result[0]  # Access the bounding box
-        if target_is_present:
+        if target_is_present(text):
             print(f'Text: {text}')
             ic(bounding_box)
             print(f'Bounding Box: {bounding_box[1]}')
@@ -47,10 +47,7 @@ def main():
 def target_is_present(text):
     text = text.lower()
     pattern = r"\w*dämm\w*"
-    found = re.search(pattern, text)
-    ic(found)
-    ic(found.group())
-    if found.group():
+    if re.search(pattern, text):
         return True
     else:
         return False
