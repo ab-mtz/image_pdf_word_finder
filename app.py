@@ -44,7 +44,7 @@ def main():
             xy = bounding_box[0] + bounding_box[2]
             # Draw rectangle
             draw.rectangle(xy, outline="red", width=2)
-            print("================= The pattern was found in the document =================")
+            print("================= The pattern was found in the document =================".center(80))
 
     img.show()
     img.save('output_image5.jpg')        
