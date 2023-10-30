@@ -10,11 +10,11 @@ from PIL import Image
 # weights for the detector and recognizer.
 pipeline = keras_ocr.pipeline.Pipeline()
 
-# Get a set of three example images
-image_paths = ['img-2.jpg', 'img-3.jpg']
+# Get a set  example images
+# image_paths = ['img-2.jpg', 'img-3.jpg']
 
 # Load images using Pillow and store them in a list
-images = [Image.open(image_path) for image_path in image_paths]
+images = [] #Image.open(image_path) for image_path in image_paths]
 # [
 #     keras_ocr.tools.read(url) for url in [
 #         'https://upload.wikimedia.org/wikipedia/commons/b/bd/Army_Reserves_Recruitment_Banner_MOD_45156284.jpg',
@@ -22,10 +22,11 @@ images = [Image.open(image_path) for image_path in image_paths]
 #         'https://upload.wikimedia.org/wikipedia/commons/b/b4/EUBanana-500x112.jpg'
 #     ]
 # ]
-
+images.append(Image.open("img-2.jpg"))
 # Each list of predictions in prediction_groups is a list of
 # (word, box) tuples.
 prediction_groups = pipeline.recognize(images)
+
 
 # Plot the predictions
 fig, axs = plt.subplots(nrows=len(images), figsize=(20, 20))
