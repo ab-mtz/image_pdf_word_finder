@@ -44,6 +44,7 @@
 
 
 import easyocr
+from PIL import ImageDraw
 
 # Create an EasyOCR Reader0< for English text recognition
 reader = easyocr.Reader(['de'])
@@ -60,3 +61,9 @@ for result in results:
     bounding_box = result[0]  # Access the bounding box
     print(f'Text: {text}')
     # print(f'Bounding Box: {bounding_box}')
+
+for result in result:
+    if result == "dämm"
+    bounding_box = result[0]
+    points = bounding_box
+    draw.rectangle(points, outline="red", width=2)  # You can choose the color and width you prefer
