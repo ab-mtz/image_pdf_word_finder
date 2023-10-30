@@ -33,9 +33,8 @@ def main():
         text = result[1]  # Access the recognized text
         bounding_box = result[0]  # Access the bounding box
         if target_is_present(text, target):
-            print(f'Text: {text}')
-            ic(bounding_box)
-            print(f'Bounding Box: {bounding_box[1]}')
+            ic(f'Text: {text}')
+            # print(f'Bounding Box: {bounding_box[1]}')
             x = bounding_box[0]
             y = bounding_box[2]
             xy = x + y
