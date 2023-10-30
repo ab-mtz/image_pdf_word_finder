@@ -63,8 +63,8 @@ for result in results:
         print(f'Text: {text}')
     # print(f'Bounding Box: {bounding_box}')
 
-# for result in result:
-#     if result == "dämm"
-#     bounding_box = result[0]
-#     points = bounding_box
-#     draw.rectangle(points, outline="red", width=2)  # You can choose the color and width you prefer
+for result in result:
+    # if result == "dämm"
+    bounding_box = result[0]
+    points = bounding_box
+    draw.rectangle(points, outline="red", width=2)  # You can choose the color and width you prefer
