@@ -38,6 +38,7 @@ def main():
             y = bounding_box[1]
             ic(y)
             xy = x + y
+            ic(xy)
             draw.rectangle(xy, outline="red", width=2)
 
     img.show()
