@@ -21,7 +21,7 @@ def main():
 
     # Recognize text in the image
     results = reader.readtext(image_path)
-    ic(results)
+    # ic(results)
 
     img = Image.open(image_path)
     draw = ImageDraw.Draw(img)
@@ -31,9 +31,12 @@ def main():
         bounding_box = result[0]  # Access the bounding box
         if text == "37":
             print(f'Text: {text}')
-            print(f'Bounding Box: {bounding_box}')
+            ic(bounding_box)
+            print(f'Bounding Box: {bounding_box[1]}')
             x = bounding_box[0]
+            ic(x)
             y = bounding_box[1]
+            ic(y)
             xy = x + y
             draw.rectangle(xy, outline="red", width=2)
 
