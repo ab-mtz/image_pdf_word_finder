@@ -12,30 +12,37 @@ import easyocr
 from PIL import Image, ImageDraw
 from icecream import ic
 
-# Create an EasyOCR Reader0< for English text recognition
-reader = easyocr.Reader(['de'])
+def main():
+    # Create an EasyOCR Reader0< for English text recognition
+    reader = easyocr.Reader(['de'])
 
-# Load an image
-image_path = 'sample1.jpg'
+    # Load an image
+    image_path = 'sample1.jpg'
 
-# Recognize text in the image
-results = reader.readtext(image_path)
-ic(results)
-# Print the recognized text and bounding boxes
-for result in results:
-    text = result[1]  # Access the recognized text
-    bounding_box = result[0]  # Access the bounding box
-    if text == "37":
-        print(f'Text: {text}')
-        print(f'Bounding Box: {bounding_box}')
-        x = bounding_box[0]
-        y = bounding_box[3]
-        xy = x + y
-# Convert the values from coordinates easyocr to PIL
-#  [[53, 405], [77, 405], [77, 419], [53, 419]] to
-# [(x0, y0), (x1, y1)] or [x0, y0, x1, y1]
-#  access element 0 and 3, take each value and convert all to a list
+    # Recognize text in the image
+    results = reader.readtext(image_path)
+    ic(results)
 
+    img = Image.open(image_path)
+    draw = ImageDraw.Draw(img)
+    # Print the recognized text and bounding boxes
+    for result in results:
+        text = result[1]  # Access the recognized text
+        bounding_box = result[0]  # Access the bounding box
+        if text == "37":
+            print(f'Text: {text}')
+            print(f'Bounding Box: {bounding_box}')
+            x = bounding_box[0]
+            y = bounding_box[3]
+            xy = x + y
+            draw.rectangle(xy, outline="red", width=2)
+    img.show()
+    img.save('output_image.jpg')        
+
+
+
+if __main__ == "__name__":
+    main()
 
 ###### and write all to a new file
 # img = Image.open(image_path)
