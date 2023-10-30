@@ -2,10 +2,10 @@
 #     # read pdf
 #     # if pdf multiple pages: iterate over it
 #     # extract image from pdf page
-#     # Hypotesis: I need to know the coodinates of image and sizes so I can extract the position of the text found
 #     # process the image to get text
+#     # I need to know the coodinates of image and sizes so I can extract the position of the text found
 #     # identify match
-#     # if coordinates, find how to highlight matched text in image (overlay)
+#     # highlight matched text in image
 
 
 import easyocr
