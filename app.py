@@ -10,7 +10,7 @@
 
 
 import easyocr
-from PIL import ImageDraw
+from PIL import Image, ImageDraw
 
 # Create an EasyOCR Reader0< for English text recognition
 reader = easyocr.Reader(['de'])
@@ -27,13 +27,15 @@ for result in results:
     bounding_box = result[0]  # Access the bounding box
     if text.isdigit():
         print(f'Text: {text}')
-    # print(f'Bounding Box: {bounding_box}')
-image = Image.open(image_path)
-draw = ImageDraw.Draw(image)
+        print(f'Bounding Box: {bounding_box}')
+
+img = Image.open(image_path)
+draw = ImageDraw.Draw(img)
 
 for result in results:
     bounding_box = result[0]
+    # Need to calculate points from coordinates
     points = bounding_box
     draw.rectangle(points, outline="red", width=2)
 
-image.show()
+img.show()
