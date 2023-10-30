@@ -59,11 +59,12 @@ results = reader.readtext(image_path)
 for result in results:
     text = result[1]  # Access the recognized text
     bounding_box = result[0]  # Access the bounding box
-    print(f'Text: {text}')
+    if text.isdigit():
+        print(f'Text: {text}')
     # print(f'Bounding Box: {bounding_box}')
 
-for result in result:
-    if result == "dämm"
-    bounding_box = result[0]
-    points = bounding_box
-    draw.rectangle(points, outline="red", width=2)  # You can choose the color and width you prefer
+# for result in result:
+#     if result == "dämm"
+#     bounding_box = result[0]
+#     points = bounding_box
+#     draw.rectangle(points, outline="red", width=2)  # You can choose the color and width you prefer
