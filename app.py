@@ -32,10 +32,15 @@ for result in results:
 img = Image.open(image_path)
 draw = ImageDraw.Draw(img)
 
+
 for result in results:
     bounding_box = result[0]
     # Need to calculate points from coordinates
-    points = bounding_box
-    draw.rectangle(points, outline="red", width=2)
+    for box in easyocr_bounding_boxes:
+        x1, y1, x2, y2 = box
+        pillow_format_box = (x1, y1, x2, y2)
+        points = bounding_box
+        draw.rectangle(points, outline="red", width=2)
 
 img.show()
+img.save('output_image.jpg')
