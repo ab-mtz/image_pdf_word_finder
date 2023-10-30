@@ -37,11 +37,8 @@ def main():
             ic(bounding_box)
             print(f'Bounding Box: {bounding_box[1]}')
             x = bounding_box[0]
-            ic(x)
             y = bounding_box[2]
-            ic(y)
             xy = x + y
-            ic(xy)
             draw.rectangle(xy, outline="red", width=2)
 
     img.show()
@@ -50,7 +47,10 @@ def main():
 def target_is_present(text):
     text = text.lower()
     pattern = r"\w*dämm\w*"
-    if re.search(pattern, text):
+    found = re.search(pattern, text)
+    ic(found)
+    ic(found.group())
+    if found.group():
         return True
     else:
         return False
