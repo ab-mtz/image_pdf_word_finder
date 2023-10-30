@@ -36,7 +36,7 @@ draw = ImageDraw.Draw(img)
 for result in results:
     bounding_box = result[0]
     # Need to calculate points from coordinates
-    for box in easyocr_bounding_boxes:
+    for box in result[0]:
         x1, y1, x2, y2 = box
         pillow_format_box = (x1, y1, x2, y2)
         points = bounding_box
