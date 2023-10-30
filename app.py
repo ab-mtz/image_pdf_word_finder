@@ -15,7 +15,7 @@ import re
 
 def main():
 
-    target = "dämm"
+    target = "damm"
     # Create an EasyOCR Reader0< for English text recognition
     reader = easyocr.Reader(['de'])
 
@@ -32,7 +32,7 @@ def main():
     for result in results:
         text = result[1]  # Access the recognized text
         bounding_box = result[0]  # Access the bounding box
-        if target_is_present(text):
+        if target_is_present(text, target):
             print(f'Text: {text}')
             ic(bounding_box)
             print(f'Bounding Box: {bounding_box[1]}')
@@ -44,9 +44,9 @@ def main():
     img.show()
     img.save('output_image.jpg')        
 
-def target_is_present(text):
+def target_is_present(text, target):
     text = text.lower()
-    pattern = r"\w*dämm\w*"
+    pattern = r"\w*{target}\w*"
     if re.search(pattern, text):
         return True
     else:
