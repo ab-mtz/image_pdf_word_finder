@@ -11,8 +11,11 @@
 import easyocr
 from PIL import Image, ImageDraw
 from icecream import ic
+import re
 
 def main():
+
+    target = "dämm"
     # Create an EasyOCR Reader0< for English text recognition
     reader = easyocr.Reader(['de'])
 
@@ -29,7 +32,7 @@ def main():
     for result in results:
         text = result[1]  # Access the recognized text
         bounding_box = result[0]  # Access the bounding box
-        if text == "37":
+        if target_is_present:
             print(f'Text: {text}')
             ic(bounding_box)
             print(f'Bounding Box: {bounding_box[1]}')
@@ -44,7 +47,13 @@ def main():
     img.show()
     img.save('output_image.jpg')        
 
-
+def target_is_present(text):
+    text.lower()
+    pattern = r"\w*dämm\w*"
+    if re.search(patter, text):
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     main()
