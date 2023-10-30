@@ -35,7 +35,7 @@ def main():
             print(f'Bounding Box: {bounding_box[1]}')
             x = bounding_box[0]
             ic(x)
-            y = bounding_box[1]
+            y = bounding_box[2]
             ic(y)
             xy = x + y
             ic(xy)
