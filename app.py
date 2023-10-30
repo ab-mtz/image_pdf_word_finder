@@ -23,6 +23,7 @@ images = [] #Image.open(image_path) for image_path in image_paths]
 #     ]
 # ]
 images.append(Image.open("img-2.jpg"))
+images.append(Image.open("img-3.jpg"))
 # Each list of predictions in prediction_groups is a list of
 # (word, box) tuples.
 prediction_groups = pipeline.recognize(images)
