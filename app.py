@@ -48,9 +48,9 @@ def main():
     img.save('output_image.jpg')        
 
 def target_is_present(text):
-    text.lower()
+    text = text.lower()
     pattern = r"\w*dämm\w*"
-    if re.search(patter, text):
+    if re.search(pattern, text):
         return True
     else:
         return False
