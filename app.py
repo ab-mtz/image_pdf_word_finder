@@ -36,12 +36,13 @@ def main():
             y = bounding_box[3]
             xy = x + y
             draw.rectangle(xy, outline="red", width=2)
+
     img.show()
     img.save('output_image.jpg')        
 
 
 
-if __main__ == "__name__":
+if __name__ == "__main__":
     main()
 
 ###### and write all to a new file
