@@ -1,37 +1,3 @@
-# # import PIL
-# # import 
-
-
-# import matplotlib.pyplot as plt
-# import keras_ocr
-# from PIL import Image
-
-# # keras-ocr will automatically download pretrained
-# # weights for the detector and recognizer.
-# pipeline = keras_ocr.pipeline.Pipeline()
-
-# # Get a set  example images
-# # image_paths = ['img-2.jpg', 'img-3.jpg']
-
-# # Load images using Pillow and store them in a list
-# images = [
-#     keras_ocr.tools.read(url) for url in [
-#         'https://traderlionmedia.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/07/08162042/Socrates-Quotes-1-1-1020x574.jpg',
-#         'https://traderlionmedia.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/07/08162041/Socrates-Quotes-2-1020x574.jpg',
-#         'https://traderlionmedia.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/07/08162041/Socrates-Quotes-3-1020x574.jpg'
-#     ]
-# ]
-# # images.append(Image.open("img-2.jpg"))
-# # images.append(Image.open("img-3.jpg"))
-# # Each list of predictions in prediction_groups is a list of
-# # (word, box) tuples.
-# prediction_groups = pipeline.recognize(images)
-
-
-# # Plot the predictions
-# fig, axs = plt.subplots(nrows=len(images), figsize=(20, 20))
-# for ax, image, predictions in zip(axs, images, prediction_groups):
-#     keras_ocr.tools.drawAnnotations(image=image, predictions=predictions, ax=ax)
 # # Steps
 #     # read pdf
 #     # if pdf multiple pages: iterate over it
