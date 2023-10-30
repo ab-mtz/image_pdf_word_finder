@@ -25,13 +25,16 @@ ic(results)
 for result in results:
     text = result[1]  # Access the recognized text
     bounding_box = result[0]  # Access the bounding box
-    if text.isdigit():
+    if text == "37":
         print(f'Text: {text}')
         print(f'Bounding Box: {bounding_box}')
-
+        points = []
+        points.append(for e in bounding_box[0])
+        points.append(for e in bounding_box[3])
 # Convert the values from coordinates easyocr to PIL
 #  [[53, 405], [77, 405], [77, 419], [53, 419]] to
 # [(x0, y0), (x1, y1)] or [x0, y0, x1, y1]
+#  access element 0 and 3, take each value and convert all to a list
 
 
 ###### and write all to a new file
