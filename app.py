@@ -33,7 +33,7 @@ def main():
             print(f'Text: {text}')
             print(f'Bounding Box: {bounding_box}')
             x = bounding_box[0]
-            y = bounding_box[3]
+            y = bounding_box[1]
             xy = x + y
             draw.rectangle(xy, outline="red", width=2)
 
