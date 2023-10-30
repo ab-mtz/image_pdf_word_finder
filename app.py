@@ -16,11 +16,11 @@ import re
 def main():
 
     target = "damm"
-    # Create an EasyOCR Reader0< for English text recognition
+    # Create an EasyOCR Reader for german
     reader = easyocr.Reader(['de'])
 
     # Load an image
-    image_path = 'sample1.jpg'
+    image_path = 'sample2.jpg'
 
     # Recognize text in the image
     results = reader.readtext(image_path)
@@ -32,16 +32,18 @@ def main():
     for result in results:
         text = result[1]  # Access the recognized text
         bounding_box = result[0]  # Access the bounding box
-        ic(f'Text: {text}')
+        # ic(f'Text: {text}')
         if target_is_present(text, target):
             # print(f'Bounding Box: {bounding_box[1]}')
+            # Convert coordinates to PIL´s structure
             x = bounding_box[0]
             y = bounding_box[2]
             xy = x + y
+            # Draw rectangle
             draw.rectangle(xy, outline="red", width=2)
 
     img.show()
-    img.save('output_image.jpg')        
+    img.save('output_image2.jpg')        
 
 def target_is_present(text, target):
     text = text.lower()
@@ -54,22 +56,3 @@ def target_is_present(text, target):
 if __name__ == "__main__":
     main()
 
-###### and write all to a new file
-# img = Image.open(image_path)
-# draw = ImageDraw.Draw(img)
-
-
-# for result in results:
-#     bounding_box = result[0]
-
-#     # Need to calculate points from coordinates
-#     for box in result[0]:
-#         print(box)
-#         x1, y1, x2, y2 = box
-
-#         pillow_format_box = (x1, y1, x2, y2)
-#         points = bounding_box
-#         draw.rectangle(points, outline="red", width=2)
-
-# img.show()
-# img.save('output_image.jpg')
