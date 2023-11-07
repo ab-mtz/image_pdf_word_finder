@@ -1,13 +1,3 @@
-# # Steps
-#     # read pdf
-#     # if pdf multiple pages: iterate over it
-#     # extract image from pdf page
-#     # process the image to get text
-#     # I need to know the coodinates of image and sizes so I can extract the position of the text found
-#     # identify match
-#     # highlight matched text in image
-
-
 import easyocr
 from PIL import Image, ImageDraw
 from icecream import ic
