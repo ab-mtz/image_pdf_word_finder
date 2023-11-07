@@ -15,7 +15,7 @@ def main():
     reader = easyocr.Reader(['de'])
 
     # Load an image
-    image_path = 'sample5.jpg'
+    image_path = 'samples\Re_Dandl_08.12.2022_Fenster.pdf'
 
     # Recognize text in the image
     results = reader.readtext(image_path)
